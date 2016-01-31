@@ -8,6 +8,6 @@ urlpatterns = [
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^food/', include('drumbackapp.urls'))
+    url(r'^', include('drumbackapp.urls'))
     # url(r'^polls/', include('polls.urls'))
 ]

@@ -1,24 +1,25 @@
+{% load staticfiles %}
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
 <title>DrumBack - Goodbye</title>
-<link href="css/style.css" rel="stylesheet" type="text/css">
-
+<link href="{% static "css/style.css" %}"rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 </head>
 
 <body>
 
 <div align="center" class="container">
 
-<img src="imgs/Logo.png" style="margin:40px auto;" />
+<img src="{% static "imgs/Logo.png" %}" style="margin:40px auto;" />
 <br />
 
 <div class="topbar">Thanks for your drumback "feedback"!</div>
 <div class="circle"></div>
 <div class="boxcontainer">
 <br />
-In behalf of our humble restuarant we promise you to listen<br />carefully to your drum rolls and make sure to<br />improve our food service to always<br />meet your expectations and <br />Have a lovely time!
+In behalf of our humble restaurant we promise you to listen<br />carefully to your drum rolls and make sure to<br/>improve our food service to always<br />meet your expectations and <br />Have a lovely time!
 </div>
 
 </div>

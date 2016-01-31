@@ -41,16 +41,14 @@ height:100%;
     }
 
 #like{
-background:url('../imgs/like.png');
 height:64px;
 width:47px;
 display:inline-block;
-margin:0 20px 0 auto;
+margin:0 auto;
 cursor:pointer;
 }
 
 #dislike{
-background:url('../imgs/dislike.png');
 height:68px;
 width:47px;
 display:inline-block;
@@ -107,4 +105,8 @@ margin:50px auto 0 auto;
 background:#dbdbdb;
 color:#000;
 cursor:pointer;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> master
