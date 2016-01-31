@@ -12,5 +12,4 @@ venv: virtual library for python.
 requirement.txt: store all python libraries needed to install relevant packages. 
 
 username: admin
-
 password: admin
