@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DrumBack - Drumback</title>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+
+<div align="center" class="container">
+
+<img src="imgs/Logo.png" style="margin:40px auto;" />
+<br />
+
+<div class="topbar">Drum with the tune!</div>
+<div class="circle"></div>
+<div id="box" class="boxcontainer">
+  <div><img src="imgs/target.png" width="120px" height="120px" align="left"></img></div>
+  <br>
+    
+</div>
+
+<button id="start" onclick="animation()" class="buttonblack">Drum to Start!</button>
+
+</div>
+
+
+
+
+
+<script>
+var drumnum;
+var drumtype=0;
+var drumdesign = ["imgs/left.png", "imgs/up.png", "imgs/right.png","imgs/down.png"];
+var sequence = [0,1,1,2,2,1,1,0,1,2,1,2,1,3,3,3,3,3,1,1,1,1,2,2,3,3,2,1];
+function animation() {
+    document.getElementById("start").style.visibility = 'hidden';
+    var interval = [0,555,685,1190,1310,1815,1935,2500,3065,3185,3690,3810,4315,4435,5000,5565,5685,6190,6310,6815,6935,7500,8125,8740,8860,9375,9940,10060];
+    for (var i = 0; i < interval.length; i++) {
+      drumnum = i+1;
+      var id = window.setTimeout(newelementandmove, interval[i]*0.85+1000);
+    }
+    window.setTimeout(gotothanks, 12000);
+}
+
+function gotothanks() {
+    window.location.href = 'thanks.html';
+}
+
+function newelementandmove() {
+  var newimg = document.createElement('img');
+
+  var divIdName = 'drum'+drumnum;
+
+  // setstyle according to type
+  newimg.style.width = "50px";
+  newimg.style.height = "50px";
+  newimg.src = drumdesign[sequence[drumtype]];
+  newimg.style.position = "absolute";
+  drumtype++;
+
+  document.getElementById("box").appendChild(newimg);
+
+  var elem = newimg; 
+  var pos = 80;
+  
+  var id = window.setInterval(frame, 5);
+  function frame() {
+    if (pos == 500) {
+      window.clearInterval(id);
+      elem.parentNode.removeChild(elem);
+    } else {
+      pos++;
+      elem.style.right = pos + 'px'; 
+    }
+  }
+
+}
+</script>
+
+</body>
+</html>

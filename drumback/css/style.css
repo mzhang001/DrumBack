@@ -1,0 +1,110 @@
+
+.container{
+width:100%;
+height:100%;
+}
+
+@font-face {
+	font-family:'FuturaBT-Light';
+	src: url('fonts/FuturaBT-Light_gdi.eot');
+	src: url('fonts/FuturaBT-Light_gdi.eot?#iefix') format('embedded-opentype'),
+		url('fonts/FuturaBT-Light_gdi.woff') format('woff'),
+		url('fonts/FuturaBT-Light_gdi.ttf') format('truetype'),
+		url('fonts/FuturaBT-Light_gdi.otf') format('opentype'),
+		url('fonts/FuturaBT-Light_gdi.svg#FuturaBT-Light') format('svg');
+	font-weight: 400;
+	font-style: normal;
+	font-stretch: normal;
+	unicode-range: U+0020-25CA;
+}
+
+.circle {
+      width: 81px;
+      height: 81px;
+      -webkit-border-radius: 40.5px;
+      -moz-border-radius: 40.5px;
+      border-radius: 40.5px;
+      background: url('../imgs/smile.png') #000000 center center no-repeat;
+	  display:inline-block;
+	  margin-left:-40px;
+	  margin-top:-13px;
+	  position:absolute;
+    }
+.dcircle {
+      width: 103px;
+      height: 103px;
+      -webkit-border-radius: 51.5px;
+      -moz-border-radius: 51.5px;
+      border-radius: 51.5px;
+      background: url('../imgs/dishicon.png') #000000 center center no-repeat;
+	  margin:0 auto;
+    }
+
+#like{
+background:url('../imgs/like.png');
+height:64px;
+width:47px;
+display:inline-block;
+margin:0 20px 0 auto;
+cursor:pointer;
+}
+
+#dislike{
+background:url('../imgs/dislike.png');
+height:68px;
+width:47px;
+display:inline-block;
+margin:0 auto;
+cursor:pointer;
+}
+
+.topbar{
+background-color:#000;
+-webkit-border-top-left-radius: 20px;
+-webkit-border-top-right-radius: 20px;
+-moz-border-radius-topleft: 20px;
+-moz-border-radius-topright: 20px;
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+height:68px;
+width:494px;
+line-height:68px;
+font-size:12pt;
+font-family: 'FuturaBT-Light';
+text-align:left;
+font-weight:bold;
+padding-left:40px;
+color:#fff;
+display:inline-block;
+}
+
+.boxcontainer{
+width:463px;
+min-height:199px;
+background:#f5f5f5;
+margin-right:12px;
+text-align:center;
+padding:30px;
+font-weight:bold;
+font-family:'FuturaBT-Light';
+font-size:12pt;
+}
+
+.buttonblack{
+color:#fff;
+background:#000;
+font-family:'FuturaBT-Light';
+font-size:12pt;
+font-weight:bold;
+width:219px;
+height:52px;
+line-height:52px;
+text-align:center;
+margin:50px auto 0 auto;
+}
+
+.buttonblack:hover{
+background:#dbdbdb;
+color:#000;
+cursor:pointer;
+}
