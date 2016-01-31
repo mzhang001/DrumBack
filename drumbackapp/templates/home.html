@@ -1,0 +1,19 @@
+{% load static swampdragon_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+</head>
+<body>
+    <h2 id="like_text"></h2>
+    <h2 id="dislike_text"></h2>
+
+    <img id="unlike" src="{% static "images/unlike.png" %}" border="0" height="200" width="200">
+    <img id="like" src="{% static "images/like.png" %}" border="0" height="200" width="200">
+
+    {% swampdragon_settings %}
+    <script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'monitor.js' %}"></script>
+</body>
+</html>
