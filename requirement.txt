@@ -1,2 +1,16 @@
-Django==1.9.1
+backports-abc==0.4
+cffi==1.5.0
+Django==1.8.8
+django-omnibus==0.2.0
+psutil==3.4.2
+pycparser==2.14
 pyserial==3.0.1
+python-dateutil==2.4.2
+pyzmq==15.2.0
+redis==2.10.5
+six==1.10.0
+sockjs-tornado==1.0.2
+SwampDragon==0.4.2.2
+tornado==4.3
+tornado-redis==2.4.18
+wheel==0.26.0
