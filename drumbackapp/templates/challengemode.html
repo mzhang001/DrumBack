@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DrumBack - Drumback</title>
+<link href="{% static "css/style.css" %}"rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+<p>
+<button onclick="animation()">Click Me</button>
+</p> 
+
+
+<script>
+var drumnum;
+function animation() {
+    var interval = [1,2,3,4,5];
+    for (var i = 0; i < interval.length; i++) {
+      drumnum = i+1;
+      var id = window.setTimeout(newelementandmove, interval[i]*1000);
+    }
+}
+
+function newelementandmove() {
+  var newdiv = document.createElement('div');
+
+  var divIdName = 'drum' + drumnum;
+
+  newdiv.style.width = "50px";
+  newdiv.style.height = "50px";
+  newdiv.style.background = "red";
+  newdiv.style.position = "absolute";
+
+  document.body.appendChild(newdiv);
+
+  var elem = newdiv;   
+  var pos = 0;
+  var id = window.setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      window.clearInterval(id);
+      elem.parentNode.removeChild(elem);
+    } else {
+      pos++; 
+      elem.style.top = pos + 'px'; 
+      elem.style.left = pos + 'px'; 
+    }
+  }
+
+}
+</script>
+
+</body>
+</html>
