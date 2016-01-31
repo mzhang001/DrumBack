@@ -31,13 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'swampdragon',
+    'drumbackapp'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,6 +61,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'omnibus.context_processors.omnibus',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -68,6 +70,8 @@ TEMPLATES = [
         },
     },
 ]
+
+SWAMP_DRAGON_CONNECTION = ('swampdragon.connections.sockjs_connection.DjangoSubscriberConnection', '/data')
 
 WSGI_APPLICATION = 'dining_drum.wsgi.application'
 
@@ -101,3 +105,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# SwampDragon settings
+SWAMP_DRAGON_CONNECTION = ('swampdragon.connections.sockjs_connection.DjangoSubscriberConnection', '/data')
+
+TEMPLATE_DIR = [os.path.join(BASE_DIR, 'templates')]
+STATICFILES_DIR = [os.path.join(BASE_DIR, 'static')]
+MUSIC_DIR = [os.path.join(BASE_DIR, 'static/../drumbackapp/static/music')]
+DRAGON_URL = 'http://localhost:9999/'
