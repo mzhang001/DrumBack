@@ -1,51 +1,84 @@
 <!DOCTYPE html>
+{% load staticfiles %}
+{% load static swampdragon_tags %}
 <html>
 <head>
+<meta charset="utf-8">
 <title>DrumBack - Drumback</title>
-<link href="{% static "css/style.css" %}"rel="stylesheet" type="text/css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
 
-<p>
-<button onclick="animation()">Click Me</button>
-</p> 
+<div align="center" class="container">
+
+<img src="{% static "imgs/Logo.png" %}" style="margin:40px auto;" />
+<br />
+
+<div class="topbar">Drum with the tune!</div>
+<div class="circle"></div>
+<div id="box" class="boxcontainer">
+  <div><img src="{% static "imgs/target.png" %}" width="120px" height="120px" align="left"></img></div>
+  <br>
+    
+</div>
+
+<button id="start" onclick="animation()" class="buttonblack">Drum to Start!</button>
+
+</div>
+
+
+
 
 
 <script>
 var drumnum;
+var drumtype=0;
+var drumdesign = ["{% static "imgs/left.png" %}", "{% static "imgs/up.png" %}",
+    "{% static "imgs/right.png" %}", "{% static "imgs/down.png" %}"];
+var sequence = [0,1,1,2,2,1,1,0,1,2,1,2,1,3,3,3,3,3,1,1,1,1,2,2,3,3,2,1];
 function animation() {
-    var interval = [1,2,3,4,5];
+    document.getElementById("start").style.visibility = 'hidden';
+    var interval = [0,555,685,1190,1310,1815,1935,2500,3065,3185,3690,3810,4315,4435,5000,5565,5685,6190,6310,6815,6935,7500,8125,8740,8860,9375,9940,10060];
     for (var i = 0; i < interval.length; i++) {
       drumnum = i+1;
-      var id = window.setTimeout(newelementandmove, interval[i]*1000);
+      var id = window.setTimeout(newelementandmove, interval[i]*0.85+1000);
     }
+    window.setTimeout(gotothanks, 12000);
+}
+
+function gotothanks() {
+    window.location.href = 'thanks.html';
 }
 
 function newelementandmove() {
-  var newdiv = document.createElement('div');
+  var newimg = document.createElement('img');
 
-  var divIdName = 'drum' + drumnum;
+  var divIdName = 'drum'+drumnum;
 
-  newdiv.style.width = "50px";
-  newdiv.style.height = "50px";
-  newdiv.style.background = "red";
-  newdiv.style.position = "absolute";
+  // setstyle according to type
+  newimg.style.width = "50px";
+  newimg.style.height = "50px";
+  newimg.src = drumdesign[sequence[drumtype]];
+  newimg.style.position = "absolute";
+  drumtype++;
 
-  document.body.appendChild(newdiv);
+  document.getElementById("box").appendChild(newimg);
 
-  var elem = newdiv;   
-  var pos = 0;
+  var elem = newimg;
+  var start_pos = 330;
+    var dist = 400;
+  var pos = start_pos;
+  
   var id = window.setInterval(frame, 5);
   function frame() {
-    if (pos == 350) {
+    if (pos == start_pos + dist) {
       window.clearInterval(id);
       elem.parentNode.removeChild(elem);
     } else {
-      pos++; 
-      elem.style.top = pos + 'px'; 
-      elem.style.left = pos + 'px'; 
+      pos++;
+      elem.style.right = pos + 'px'; 
     }
   }
 

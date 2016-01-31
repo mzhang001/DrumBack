@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load static swampdragon_tags %}
 <!doctype html>
 <html>
 <head>
@@ -9,6 +10,10 @@
 </head>
 
 <body>
+<audio id="up_voice"><source src={% static "music/up.wav" %} type="audio/wav" preload="auto"></audio>
+<audio id="down_voice"><source src={% static "music/down.wav" %} type="audio/wav" preload="auto"></audio>
+<audio id="left_voice"><source src={% static "music/left.wav" %} type="audio/wav" preload="auto"></audio>
+<audio id="right_voice"><source src={% static "music/right.wav" %} type="audio/wav" preload="auto"></audio>
 
 <div align="center" class="container">
 
@@ -41,7 +46,9 @@ Can you tell us what was your dishes?
 </div>
 
 </div>
-
+ {% swampdragon_settings %}
+    <script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/start_ani.js' %}"></script>
 </body>
 
 </html>
