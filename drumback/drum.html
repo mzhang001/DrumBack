@@ -20,12 +20,36 @@
 <br />
 <div class="dcircle"></div>
 <br />
-<div id="like"></div>
-<div id="dislike"></div>
+<br>
+<img id="dislike" src="imgs/dislike.png" style="position:absolute left:50px"></img>
+<img id="like" src="imgs/like.png" style="position:absolute right:50px"></img>
+
+
+<br>
+
 <a style="text-decoration:none;" href="challengemode.html"><div class="buttonblack">Go to Challenge Mode!</div></a>
 </div>
 
 </div>
+
+<script>
+//TODO event listener to constantly call update when there is input from Arduino
+var pos = 0;
+function update() {
+	if (pos < 0) {
+		document.getElementById(dislike).style.visibility = "visible";
+		document.getElementById(dislike).style.height = 64*0.2*(-pos+1);
+		document.getElementById(dislike).style.height = 47*0.2*(-pos+1);
+		document.getElementById(like).style.visibility = "hidden";
+	}
+	else {
+		document.getElementById(like).style.visibility = "visible";
+		document.getElementById(like).style.height = 64*0.2*(-pos+1);
+		document.getElementById(like).style.height = 47*0.2*(-pos+1);
+		document.getElementById(dislike).style.visibility = "hidden";
+	}	
+}
+</script>
 
 </body>
 
