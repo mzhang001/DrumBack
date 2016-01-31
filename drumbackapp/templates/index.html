@@ -1,0 +1,38 @@
+{% load static swampdragon_tags %}
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DrumBack</title>
+<link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+
+<body>
+<audio id="up_voice"><source src={% static "music/up.wav" %} type="audio/wav" preload="auto"></audio>
+<audio id="down_voice"><source src={% static "music/down.wav" %} type="audio/wav" preload="auto"></audio>
+<audio id="left_voice"><source src={% static "music/left.wav" %} type="audio/wav" preload="auto"></audio>
+<audio id="right_voice"><source src={% static "music/right.wav" %} type="audio/wav" preload="auto"></audio>
+
+<div align="center" class="container">
+
+
+<img src="{% static "imgs/Logo.png" %}" style="margin:40px auto;" />
+<br />
+
+<div class="topbar">Thanks so much for dining with us!</div>
+<div class="circle"></div>
+<div class="boxcontainer">
+<br />
+Before you leave, would you like to give a DrumBack "Feedback" about your food?
+<a style="text-decoration:none;" href="start.html"><div class="buttonblack">Yes, let's do it</div></a>
+</div>
+
+</div>
+    {% swampdragon_settings %}
+    <script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/drum_sd.js' %}"></script>
+</body>
+
+</html>

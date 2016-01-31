@@ -1,0 +1,40 @@
+{% load staticfiles %}
+{% load static swampdragon_tags %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>DrumBack - Drumback</title>
+<link href="{% static "css/style.css" %}"rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+
+<body>
+<audio id="up_voice"><source src={% static "music/up.wav" %} type="audio/wav" preload="auto"></audio>
+<audio id="down_voice"><source src={% static "music/down.wav" %} type="audio/wav" preload="auto"></audio>
+<audio id="left_voice"><source src={% static "music/left.wav" %} type="audio/wav" preload="auto"></audio>
+<audio id="right_voice"><source src={% static "music/right.wav" %} type="audio/wav" preload="auto"></audio>
+
+<div align="center" class="container">
+
+<img src="{% static "imgs/Logo.png" %}" style="margin:40px auto;" />
+<br />
+
+<div class="topbar">Dish | Jacketpotato, Start drumming!</div>
+<div class="circle"></div>
+<div class="boxcontainer">
+<br />
+<div class="dcircle"></div>
+<br />
+<div id="like"></div>
+<div id="dislike"></div>
+<a style="text-decoration:none;" href="thanks.html"><div class="buttonblack">Finish Drumback!</div></a>
+</div>
+
+</div>
+    {% swampdragon_settings %}
+    <script type="text/javascript" src="{% static 'swampdragon/js/dist/swampdragon.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/drum_ani.js' %}"></script>
+</body>
+
+</html>
